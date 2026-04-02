@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Herbify Organic Essentials E-Commerce</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="index.html" class="logo">
+        <img src="images/nav_logo.png" alt="Organic Logo" />
+      </a>
+      <nav class="menu">
+        <div class="dropdown">
+          <a href="index.html">HOME</a>
+        </div>
+        <div class="dropdown">
+          <a href="#">SHOP <i class="fa fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="bodycare.html">Body Care</a>
+            <a href="exclusive_bundle.html">Exclusive Bundle</a>
+            <a href="hair_serum.html">Hair Serum</a>
+            <a href="oil_shampoo.html"
+              >Organic Hair Oil / Organic Hair Shampoo
+            </a>
+            <a href="soap.html">Organic Soap </a>
+            <a href="wellness.html">Wellness</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#section-heading">BLOG HERBIFY</a>
+        </div>
+        <div class="dropdown">
+          <a href="contactus.html">CONTACT US</a>
+        </div>
+      </nav>
+      <div class="icons">
+        <i class="fas fa-bars" id="menu-toggle" style="color: black"></i>
+
+        <i class="fa fa-search" id="search-btn"></i>
+        <a href="account.html">
+          <i class="fa fa-user"></i>
+        </a>
+        <i class="fa fa-shopping-cart" id="cart-btn"> Cart</i>
+        <div class="cart-count" id="cart-count">0</div>
+      </div>
+    </header>
+    <section class="hero">
+      <div class="overlay-box">
+        <h1>
+          Purely Potent, Proudly Pakistani: Discover Your Glow with our Organic
+          Soap.
+        </h1>
+        <p>Natural oils, soaps, and shampoos crafted for your skin.</p>
+        <a href="shop.html" class="btn">Shop Now</a>
+      </div>
+    </section>
+    <section class="cards-section">
+      <h3 class="section-heading">Explore Our Natural Collections</h3>
+
+      <div class="card">
+        <div class="emoji-badge">🧼</div>
+        <div class="card-content">
+          <h3>Organic Soap</h3>
+          <p>
+            Indulge in handmade soaps, crafted to cleanse, soothe, and
+            rejuvenate your skin naturally.
+          </p>
+          <a href="soap.html">Read More</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="emoji-badge">🌿</div>
+        <div class="card-content">
+          <h3>Shampoo & Hair Oil</h3>
+          <p>
+            Nourish your hair from root to tip with our herbal shampoos and
+            potent organic hair oils.
+          </p>
+          <a href="oil_shampoo.html">Read More</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="emoji-badge">✨</div>
+        <div class="card-content">
+          <h3>Hair Serum</h3>
+          <p>
+            Achieve a silky, frizz-free finish with our lightweight and
+            protective hair serums.
+          </p>
+          <a href="hair_serum.html">Read More</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="emoji-badge">🧴</div>
+        <div class="card-content">
+          <h3>Body Care</h3>
+          <p>
+            Pamper your skin from head to toe with our range of nourishing body
+            care essentials.
+          </p>
+          <a href="bodycare.html">Read More</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="emoji-badge">🎁</div>
+        <div class="card-content">
+          <h3>Exclusive Bundles</h3>
+          <p>
+            Celebrate with us! Get our best-sellers in one exclusive,
+            limited-time package deal.
+          </p>
+          <a href="exclusive_bundle.html">Read More</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="emoji-badge">🧘‍♀️</div>
+        <div class="card-content">
+          <h3>Wellness</h3>
+          <p>
+            Enhance your well-being with our collection of natural wellness and
+            aromatherapy products.
+          </p>
+          <a href="wellness.html">Read More</a>
+        </div>
+      </div>
+    </section>
+    <section class="info-section">
+      <div class="left">
+        <img
+          src="https://i.pinimg.com/1200x/c7/f2/97/c7f297e75a4fb06b7ac33cd8bef51b20.jpg"
+          alt="Product"
+        />
+      </div>
+
+      <div class="right">
+        <h3>Rooted in Purity, Crafted with Care.</h3>
+        <p class="intro">
+          Discover the Herbify Difference. At Herbify, we combine the power of
+          pure herbs with modern care to create natural, gentle, and effective
+          products you can trust. Crafted for everyday wellness, our products
+          bring nature’s goodness straight to you.
+        </p>
+
+        <div class="accordion">
+          <div class="item">
+            <div class="title" onclick="toggleAccordion(this)">
+              <h4>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 12.75l-2.62 2.62M12 12l2.62-2.62M12 12v2.62M12 12H9.38m3.75 0a4.5 4.5 0 10-9 0 4.5 4.5 0 009 0zm0 0c0 1.9-1.2 3.5-3 4.2-1.8.7-4 1-6 .2M18 18c0-1.9-1.2-3.5-3-4.2-1.8-.7-4-1-6-.2"
+                  ></path>
+                </svg>
+                100% Organic Ingredients
+              </h4>
+              <span class="icon">+</span>
+            </div>
+            <p class="content">
+              Crafted with certified organic and cruelty-free ingredients, our
+              products avoid parabens, sulfates, and artificial fragrances
+              delivering only pure botanicals that love your skin.
+            </p>
+          </div>
+
+          <div class="item">
+            <div class="title" onclick="toggleAccordion(this)">
+              <h4>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3 3v1.5M3 21v-6m0 0l2.77-.693a9 9 0 016.208.682l.108.054a9 9 0 006.086.71l3.114-.732a48.524 48.524 0 01-.005-10.499l-3.11.732a9 9 0 01-6.085-.711l-.108-.054a9 9 0 00-6.208-.682L3 4.5M3 15V4.5"
+                  ></path>
+                </svg>
+                Authentically Made in Pakistan
+              </h4>
+              <span class="icon">+</span>
+            </div>
+            <p class="content">
+              Handmade with love in Lahore, our products uplift local artisans
+              and highlight Pakistan’s craftsmanship. We’re proudly one of the
+              fastest-growing clean beauty brands nationwide.
+            </p>
+          </div>
+
+          <div class="item">
+            <div class="title" onclick="toggleAccordion(this)">
+              <h4>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM18 13.5a3.375 3.375 0 00-3.375-3.375L12.75 9.75l-1.875.375a3.375 3.375 0 00-3.375 3.375v1.5a3.375 3.375 0 003.375 3.375L12.75 18l1.875-.375a3.375 3.375 0 003.375-3.375v-1.5z"
+                  ></path>
+                </svg>
+                Aromatherapy Perks
+              </h4>
+              <span class="icon">+</span>
+            </div>
+            <p class="content">
+              Our products are blended with pure essential oils to make your
+              daily care a calming experience. Let nature’s scents refresh your
+              mind and uplift your mood.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <h3 id="section-heading" class="section-heading">Our Blogs</h3>
+    <div class="cards-wrapper">
+      <!-- Card 1 -->
+      <div class="blog-card">
+        <img
+          src="https://i.pinimg.com/1200x/a7/fc/cf/a7fccff4e11dc04c4ef17a2dcdeab5ef.jpg"
+        />
+        <div class="blog-content">
+          <h3>
+            Buy Herbal Oil Pakistan: Your Expert Guide to Natural Hair Care
+          </h3>
+          <div class="posted">Posted by <b>Admin</b></div>
+
+          <div class="icons">
+            <div class="share-wrapper">
+              <i class="fa-solid fa-share-nodes share-icon"></i>
+
+              <div class="social-share">
+                <span>Share:</span>
+                <a href="https://www.facebook.com" title="Facebook"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="https://twitter.com" title="Twitter"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="https://api.whatsapp.com" title="WhatsApp"
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
+                <a href="https://www.youtube.com" title="YouTube"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+                <a href="https://www.instagram.com" title="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+
+            <a href="blog1.html#comment-section">
+              <i class="fa-regular fa-message"></i>
+            </a>
+          </div>
+
+          <div class="preview">
+            Learn how to make simple and natural skincare routine at home using
+            organic ingredients...
+          </div>
+
+          <a href="blog1.html" class="continue">Continue →</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="blog-card">
+        <img
+          src="https://i.pinimg.com/736x/b2/bf/60/b2bf6048d202b9428c6d56b9d8e028ec.jpg"
+        />
+        <div class="blog-content">
+          <h3>Diet and Hair Health: The Surprising Link to Better Hair</h3>
+          <div class="posted">Posted by <b>Admin</b></div>
+
+          <div class="icons">
+            <div class="share-wrapper">
+              <i class="fa-solid fa-share-nodes share-icon"></i>
+
+              <div class="social-share">
+                <span>Share:</span>
+                <a href="https://www.facebook.com" title="Facebook"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="https://twitter.com" title="Twitter"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="https://api.whatsapp.com" title="WhatsApp"
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
+                <a href="https://www.youtube.com" title="YouTube"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+                <a href="https://www.instagram.com" title="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+
+            <a href="blog2.html#comment-section">
+              <i class="fa-regular fa-message"></i>
+            </a>
+          </div>
+
+          <div class="preview">
+            Learn how to make simple and natural skincare routine at home using
+            organic ingredients...
+          </div>
+
+          <a href="blog2.html" class="continue">Continue →</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="blog-card">
+        <img
+          src="https://i.pinimg.com/1200x/a0/00/6a/a0006a3f30163aa3cc86e7106b6a5d05.jpg"
+        />
+        <div class="blog-content">
+          <h3>The 5-Minute Daily Routine to Prevent Split Ends Forever</h3>
+          <div class="posted">Posted by <b>Admin</b></div>
+
+          <div class="icons">
+            <div class="share-wrapper">
+              <i class="fa-solid fa-share-nodes share-icon"></i>
+
+              <div class="social-share">
+                <span>Share:</span>
+                <a href="https://www.facebook.com" title="Facebook"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="https://twitter.com" title="Twitter"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="https://api.whatsapp.com" title="WhatsApp"
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
+                <a href="https://www.youtube.com" title="YouTube"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+                <a href="https://www.instagram.com" title="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+
+            <a href="blog3.html#comment-section">
+              <i class="fa-regular fa-message"></i>
+            </a>
+          </div>
+
+          <div class="preview">
+            Learn how to make simple and natural skincare routine at home using
+            organic ingredients...
+          </div>
+
+          <a href="blog3.html" class="continue">Continue →</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img src="images/nav_logo.png" alt="Herbify Logo" />
+        </div>
+        <div class="footer-subscribe">
+          <h3>Join Our Wellness Journey</h3>
+          <form action="" method="post" class="subscribe-form">
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="link-section">
+        <div class="row row-3">
+          <div class="col">
+            <h4 class="footer-heading">About Us</h4>
+            <ul>
+              <li class="aboutline">
+                Pure, potent, and proudly Pakistani. We provide the finest
+                organic, handcrafted wellness products for an authentic
+                aromatherapy experience.
+              </li>
+            </ul>
+          </div>
+          <div class="col">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul>
+              <li><a href="shop.html">Shop All</a></li>
+              <li><a href="#section-heading">Blogs</a></li>
+              <li><a href="contactus.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h4 class="footer-heading">Shop Categories</h4>
+            <ul>
+              <li><a href="bodycare.html">Body Care</a></li>
+              <li><a href="hair_serum.html">Hair Serum</a></li>
+              <li><a href="oil_shampoo.html">Hair Shampoo & Oil</a></li>
+              <li><a href="soap.html">Organic Soap</a></li>
+              <li><a href="exclusive_bundle.html">Exclusive Bundle</a></li>
+
+              <li><a href="wellness.html">Wellness </a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col">
+          <h4 class="footer-heading">Contact Info</h4>
+          <ul>
+            <li class="aboutline">
+              <i class="fa-solid fa-location-dot"></i>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=123+Main+Boulevard,+Gulberg,+Lahore,+Pakistan"
+                target="_blank"
+              >
+                123 Main Boulevard, Gulberg Lahore, Pakistan
+              </a>
+            </li>
+
+            <li class="aboutline">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+923001234567">+92 300 1234567</a>
+            </li>
+
+            <li class="aboutline">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:support@herbify.com">support@herbify.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 Herbify. All Rights Reserved.</div>
+    </footer>
+    <!-- Search Overlay -->
+    <div id="search-overlay">
+      <div class="search-container">
+        <span id="close-search">&times;</span>
+        <input type="text" id="search-input" placeholder="Search products..." />
+        <div id="search-results"></div>
+      </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+      <span class="close-cart" id="close-cart">&times;</span>
+      <h3>Your Cart</h3>
+      <div id="cart-items"></div>
+      <div class="cart-total" id="cart-total">Total: $0.00</div>
+      <div class="cart-actions" id="cart-actions" style="display: none">
+        <a href="checkout.html" class="checkout">Checkout</a>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>

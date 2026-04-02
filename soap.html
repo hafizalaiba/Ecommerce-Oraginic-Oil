@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Herbify Soap</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      body {
+        background: #fdfdfd;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="index.html" class="logo">
+        <img src="images/nav_logo.png" alt="Organic Logo" />
+      </a>
+      <nav class="menu">
+        <div class="dropdown">
+          <a href="index.html">HOME</a>
+        </div>
+        <div class="dropdown">
+          <a href="#">SHOP <i class="fa fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="bodycare.html">Body Care</a>
+            <a href="exclusive_bundle.html">Exclusive Bundle</a>
+            <a href="hair_serum.html">Hair Serum</a>
+            <a href="oil_shampoo.html"
+              >Organic Hair Oil / Organic Hair Shampoo
+            </a>
+            <a href="soap.html">Organic Soap </a>
+            <a href="wellness.html">Wellness</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="index.html#section-heading">BLOG HERBIFY</a>
+        </div>
+        <div class="dropdown">
+          <a href="contactus.html">CONTACT US</a>
+        </div>
+      </nav>
+      <div class="icons">
+        <i class="fas fa-bars" id="menu-toggle" style="color: black"></i>
+
+        <i class="fa fa-search" id="search-btn"></i>
+        <a href="account.html">
+          <i class="fa fa-user"></i>
+        </a>
+        <i class="fa fa-shopping-cart" id="cart-btn"> Cart</i>
+        <div class="cart-count" id="cart-count">0</div>
+      </div>
+    </header>
+
+    <div class="banner">Herbify Soap Collection</div>
+
+    <!-- Products -->
+    <div class="content-wrapper">
+      <div class="cards-wrapper">
+        <div
+          class="card"
+          data-id="1"
+          data-name="
+Perfect Neem Soap Making At Home || Homemade Neem Soap For Clean, Bright And Pimples Free skin"
+          data-price="5.99"
+          data-img="https://i.pinimg.com/736x/c0/11/f2/c011f21350fcb3bdaeeebbbd4e56735c.jpg"
+          data-category="Soap"
+          data-tags="Natural, Antibacterial, Acne Control, Brightening, Handmade, Soothing, Moisturizing, Organic"
+        >
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/736x/c0/11/f2/c011f21350fcb3bdaeeebbbd4e56735c.jpg"
+              alt="Perfect Neem Soap Making At Home || Homemade Neem Soap For Clean, Bright And Pimples Free skin"
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4>
+              Perfect Neem Soap Making At Home || Homemade Neem Soap For Clean,
+              Bright And Pimples Free skin
+            </h4>
+            <p>$5.99</p>
+            <span>Organic Soap</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          data-id="2"
+          data-name="Dry soap | pumice and a bast"
+          data-price="5.99"
+          data-img="https://i.pinimg.com/736x/d1/36/82/d13682749d236f081c8f2aa61f2e96b5.jpg"
+          data-category="Soap"
+          data-tags="Exfoliating, Pumice, Handmade, Natural, Rough Skin Care, Moisturizing, Organic"
+        >
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/736x/d1/36/82/d13682749d236f081c8f2aa61f2e96b5.jpg"
+              alt="Dry soap | pumice and a bast"
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4>Dry soap | pumice and a bast</h4>
+            <p>$5.99</p>
+            <span>Organic Soap</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          data-id="3"
+          data-name="
+
+Handmade soap from natural ingredients | various herbs | chamomile"
+          data-price="5.99"
+          data-img="https://i.pinimg.com/1200x/18/74/0d/18740de2fc005f7842dd864143e9f704.jpg"
+          data-category="Soap"
+          data-tags="Handmade, Natural, Herbal, Chamomile, Moisturizing, Gentle, Organic"
+        >
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/1200x/18/74/0d/18740de2fc005f7842dd864143e9f704.jpg"
+              alt="Handmade soap from natural ingredients | various herbs | chamomile"
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4>
+              Handmade soap from natural ingredients | various herbs | chamomile
+            </h4>
+            <p>$5.99</p>
+            <span>Organic Soap</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          data-id="4"
+          data-name="
+Olive Oil in Soap"
+          data-price="5.99"
+          data-img="https://i.pinimg.com/1200x/42/a0/00/42a00086cf5b003c3de73412ad020916.jpg"
+          data-category="Soap"
+          data-tags="Olive Oil, Natural, Moisturizing, Gentle, Handmade, Organic, Skin Care"
+        >
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/1200x/42/a0/00/42a00086cf5b003c3de73412ad020916.jpg"
+              alt="Olive Oil in Soap"
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4>Olive Oil in Soap</h4>
+            <p>$5.99</p>
+            <span>Organic Soap</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          data-id="5"
+          data-name="
+Charcoal Tea Tree Soap"
+          data-price="5.99"
+          data-img="https://i.pinimg.com/1200x/37/01/16/370116937e40e36bad21735fb9848dbf.jpg"
+          data-category="Soap"
+          data-tags="Charcoal, Tea Tree, Natural, Anti-Acne, Detox, Handmade, Organic, Skin Care"
+        >
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/1200x/37/01/16/370116937e40e36bad21735fb9848dbf.jpg"
+              alt="Charcoal Tea Tree Soap"
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4>Charcoal Tea Tree Soap</h4>
+            <p>$5.99</p>
+            <span>Organic Soap</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+        <div
+          class="card"
+          data-id="6"
+          data-name="
+Hazelnut Coffee Soap"
+          data-price="5.99"
+          data-img="https://i.pinimg.com/1200x/80/c1/e2/80c1e28d6e5c99d6a11c9b4a36ff3a67.jpg"
+          data-category="Soap"
+          data-tags="Hazelnut, Coffee, Exfoliating, Handmade, Organic, Natural, Moisturizing, Skin Care"
+        >
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/1200x/80/c1/e2/80c1e28d6e5c99d6a11c9b4a36ff3a67.jpg"
+              alt="Hazelnut Coffee Soap"
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4>Hazelnut Coffee Soap</h4>
+            <p>$5.99</p>
+            <span>Organic Soap</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+    <aside class="sidebar">
+        <h3>Recent Posts</h3>
+        <ul>
+          <li>
+            <a href="blog1.html"
+              >Buy Herbal Oil Pakistan: Your Expert Guide to Natural Hair
+              Care</a
+            >
+          </li>
+          <li>
+            <a href="blog2.html"
+              >Diet and Hair Health: The Surprising Link to Better Hair</a
+            >
+          </li>
+          <li>
+            <a href="blog3.html"
+              >The 5-Minute Daily Routine to Prevent Split Ends Forever</a
+            >
+          </li>
+        </ul>
+
+        <h3>Categories</h3>
+        <ul>
+          <li><a href="bodycare.html">Body Care</a></li>
+          <li><a href="exclusive_bundle.html">Exclusive Bundle</a></li>
+          <li><a href="hair_serum.html">Hair Serum</a></li>
+          <li>
+            <a href="oil_shampoo.html"
+              >Organic Hair Oil / Organic Hair Shampoo
+            </a>
+          </li>
+          <li><a href="soap.html">Organic Soap </a></li>
+          <li><a href="wellness.html">Wellness</a></li>
+        </ul>
+      </aside>
+    </div>
+    <!-- Search Overlay -->
+    <div id="search-overlay">
+      <div class="search-container">
+        <span id="close-search">&times;</span>
+        <input type="text" id="search-input" placeholder="Search products..." />
+        <div id="search-results"></div>
+      </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+      <span class="close-cart" id="close-cart">&times;</span>
+      <h3>Your Cart</h3>
+      <div id="cart-items"></div>
+      <div class="cart-total" id="cart-total">Total: $0.00</div>
+      <div class="cart-actions" id="cart-actions" style="display: none">
+        <a href="checkout.html" class="checkout">Checkout</a>
+      </div>
+    </div>
+    <hr />
+    <footer class="footcopy">© 2025 Developed by Herbify</footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <title>Herbify Contact Us</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: #f4f6f8;
+      }
+
+      .contact-section {
+        padding: 80px 20px;
+        background: #f9f9f9;
+      }
+
+      .contact-container {
+        max-width: 700px;
+        margin: auto;
+      }
+
+      .contact-info {
+        font-size: 12px;
+        letter-spacing: 2px;
+        color: #aaa;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .contact-heading {
+        font-size: 36px;
+        color: #538b53;
+        margin-bottom: 30px;
+      }
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .form-row {
+        display: flex;
+        gap: 20px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 14px 15px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 14px;
+        outline: none;
+      }
+
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        border-color: #538b53;
+      }
+
+      .contact-form textarea {
+        resize: none;
+      }
+
+      .contact-form button {
+        width: fit-content;
+        padding: 14px 30px;
+        background: #6daa6d;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background 0.3s;
+      }
+
+      .contact-form button:hover {
+        background: #538b53;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .form-row {
+          flex-direction: column;
+        }
+        .contact-box {
+          padding: 22px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="navbar">
+      <a href="index.html" class="logo">
+        <img src="images/nav_logo.png" alt="Organic Logo" />
+      </a>
+      <nav class="menu">
+        <div class="dropdown">
+          <a href="index.html">HOME</a>
+        </div>
+        <div class="dropdown">
+          <a href="#">SHOP <i class="fa fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="bodycare.html">Body Care</a>
+            <a href="exclusive_bundle.html">Exclusive Bundle</a>
+            <a href="hair_serum.html">Hair Serum</a>
+            <a href="oil_shampoo.html"
+              >Organic Hair Oil / Organic Hair Shampoo
+            </a>
+            <a href="soap.html">Organic Soap </a>
+            <a href="wellness.html">Wellness</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="index.html#section-heading">BLOG HERBIFY</a>
+        </div>
+        <div class="dropdown">
+          <a href="contactus.html">CONTACT US</a>
+        </div>
+      </nav>
+      <div class="icons">
+        <i class="fas fa-bars" id="menu-toggle" style="color: black"></i>
+
+        <i class="fa fa-search" id="search-btn"></i>
+        <a href="account.html">
+          <i class="fa fa-user"></i>
+        </a>
+        <i class="fa fa-shopping-cart" id="cart-btn"> Cart</i>
+        <div class="cart-count" id="cart-count">0</div>
+      </div>
+    </header>
+
+    <!-- MAP-->
+    <section class="map-section">
+      <!-- GOOGLE MAP -->
+      <iframe
+        src="https://www.google.com/maps?q=Lahore,Pakistan&output=embed"
+        loading="lazy"
+      >
+      </iframe>
+      <!-- Search Overlay -->
+      <div id="search-overlay">
+        <div class="search-container">
+          <span id="close-search">&times;</span>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search products..."
+          />
+          <div id="search-results"></div>
+        </div>
+      </div>
+      <!-- Cart Sidebar -->
+      <div class="cart-sidebar" id="cart-sidebar">
+        <span class="close-cart" id="close-cart">&times;</span>
+        <h3>Your Cart</h3>
+        <div id="cart-items"></div>
+        <div class="cart-total" id="cart-total">Total: $0.00</div>
+        <div class="cart-actions" id="cart-actions" style="display: none">
+          <a href="checkout.html" class="checkout">Checkout</a>
+        </div>
+      </div>
+      <!-- INFO BOX -->
+      <div class="contact-box">
+        <p>Contact info</p>
+        <h2>Get in touch</h2>
+
+        <div class="info-item">
+          <i class="fa-solid fa-location-dot"></i>
+           <a
+                href="https://www.google.com/maps/search/?api=1&query=123+Main+Boulevard,+Gulberg,+Lahore,+Pakistan"
+                target="_blank"
+              >
+                123 Main Boulevard, Gulberg <br>Lahore, Pakistan
+              </a>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-phone"></i>
+              <a href="tel:+923001234567">+92 300 1234567</a>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:support@herbify.com">support@herbify.com</a>
+        </div>
+      </div>
+    </section>
+    <section class="contact-section">
+      <div class="contact-container">
+        <p class="contact-info">INFORMATION ABOUT US</p>
+        <h2 class="contact-heading">CONTACT US FOR ANY QUESTIONS</h2>
+
+        <form class="contact-form" method="post" action="">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+
+          <input type="tel" name="phone" placeholder="Phone Number" required />
+
+          <input type="text" name="company" placeholder="Company Name" />
+
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+            required
+          ></textarea>
+
+          <button type="submit">Ask a Question</button>
+        </form>
+      </div>
+    </section>
+
+    <hr />
+    <!-- Footer -->
+    <footer class="footcopy">© 2025 Developed by Herbify</footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Herbify Exclusive Bundle</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      body {
+        background: #fdfdfd;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="index.html" class="logo">
+        <img src="images/nav_logo.png" alt="Organic Logo" />
+      </a>
+      <nav class="menu">
+        <div class="dropdown">
+          <a href="index.html">HOME</a>
+        </div>
+        <div class="dropdown">
+          <a href="#">SHOP <i class="fa fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="bodycare.html">Body Care</a>
+            <a href="exclusive_bundle.html">Exclusive Bundle</a>
+            <a href="hair_serum.html">Hair Serum</a>
+            <a href="oil_shampoo.html"
+              >Organic Hair Oil / Organic Hair Shampoo
+            </a>
+            <a href="soap.html">Organic Soap </a>
+            <a href="wellness.html">Wellness</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#section-heading">BLOG HERBIFY</a>
+        </div>
+        <div class="dropdown">
+          <a href="contactus.html">CONTACT US</a>
+        </div>
+      </nav>
+      <div class="icons">
+        <i class="fas fa-bars" id="menu-toggle" style="color: black"></i>
+
+        <i class="fa fa-search" id="search-btn"></i>
+        <a href="account.html">
+          <i class="fa fa-user"></i>
+        </a>
+        <i class="fa fa-shopping-cart" id="cart-btn"> Cart</i>
+        <div class="cart-count" id="cart-count">0</div>
+      </div>
+    </header>
+
+    <div class="banner">Herbify Soap Collection</div>
+
+    <!-- Products -->
+    <div class="content-wrapper">
+      <div class="cards-wrapper">
+        <div
+          class="card"
+          data-id="1"
+          data-name="
+Exclusive Bundle of Leading SPA | Skincare"
+          data-price="5.99"
+          data-img="https://i.pinimg.com/1200x/c8/5a/f8/c85af894a350b50ce9455dddd45974f8.jpg"
+          data-category="Exclusive_Bundle"
+          data-tags="SPA, Skincare, Bundle, Luxury, Moisturizing, Hydrating, Face Care, Body Care, Organic"
+        >
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/1200x/c8/5a/f8/c85af894a350b50ce9455dddd45974f8.jpg"
+              alt="Exclusive Bundle of Leading SPA | Skincare"
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4>Exclusive Bundle of Leading SPA | Skincare</h4>
+            <p>$5.99</p>
+            <span>All In One</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          data-id="2"
+          data-name="
+Transform Your Routine with Organic Skincare"
+          data-price="5.99"
+          data-img="https://i.pinimg.com/736x/f9/07/a7/f907a7fff89589bf3564e3a353f59795.jpg"
+          data-category="Exclusive_Bundle"
+          data-tags="Organic, Skincare, Daily Routine, Moisturizing, Hydrating, Natural, Face Care, Body Care, Anti-aging"
+        >
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/736x/f9/07/a7/f907a7fff89589bf3564e3a353f59795.jpg"
+              alt="
+Transform Your Routine with Organic Skincare"
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4>Transform Your Routine with Organic Skincare</h4>
+            <p>$5.99</p>
+            <span>All In One</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+        <div
+          class="card"
+          data-id="3"
+          data-name="
+Goodie's small-batch products"
+          data-price="5.99"
+          data-img="https://i.pinimg.com/1200x/8b/1b/3c/8b1b3c11c236dae344187957015bae89.jpg"
+          data-category="Exclusive_Bundle"
+          data-tags="Small-Batch, Handmade, Natural, Organic, Skincare, Body Care, Face Care, Unique, Artisan"
+        >
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/1200x/8b/1b/3c/8b1b3c11c236dae344187957015bae89.jpg"
+              alt="Goodie's small-batch products"
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4>Goodie's small-batch products</h4>
+            <p>$5.99</p>
+            <span>All In One</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+        <div
+          class="card"
+          data-id="4"
+          data-name="
+ Products for Radiant Skin | Achieving a Natural | Lasting Glow"
+          data-price="5.99"
+          data-img="https://i.pinimg.com/1200x/2e/01/ca/2e01caa18a123f12bfd65c8919858f1e.jpg"
+          data-category="Exclusive_Bundle"
+          data-tags="Radiant Skin, Natural, Glow, Skincare, Hydrating, Brightening, Healthy Skin, Organic"
+        >
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/1200x/2e/01/ca/2e01caa18a123f12bfd65c8919858f1e.jpg"
+              alt="Products for Radiant Skin | Achieving a Natural | Lasting Glow"
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4>
+              Products for Radiant Skin | Achieving a Natural | Lasting Glow
+            </h4>
+            <p>$5.99</p>
+            <span>All In One</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+        <div
+          class="card"
+          data-id="5"
+          data-name="
+
+Skin Care Products "
+          data-price="5.99"
+          data-img="https://i.pinimg.com/1200x/e1/61/81/e16181c166555996cd1710d830ea87fa.jpg"
+          data-category="Exclusive_Bundle"
+          data-tags="Skincare, Hydrating, Brightening, Natural, Organic, Healthy Skin, Glow"
+        >
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/1200x/e1/61/81/e16181c166555996cd1710d830ea87fa.jpg"
+              alt="Skin Care Products "
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4>Skin Care Products</h4>
+            <p>$5.99</p>
+            <span>All In One</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+        <div
+          class="card"
+          data-id="6"
+          data-name="
+
+Introducing New Wild Rose Skincare"
+          data-price="5.99"
+          data-img="https://i.pinimg.com/736x/45/73/42/45734251206c2dfccdf71f7f4f50bc69.jpg"
+          data-category="Exclusive_Bundle"
+          data-tags="Skincare, Wild Rose, Hydrating, Brightening, Natural, Organic, Glow"
+        >
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/736x/45/73/42/45734251206c2dfccdf71f7f4f50bc69.jpg"
+              alt="
+Introducing New Wild Rose Skincare"
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4>Introducing New Wild Rose Skincare</h4>
+            <p>$5.99</p>
+            <span>All In One</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+       <aside class="sidebar">
+        <h3>Recent Posts</h3>
+        <ul>
+          <li>
+            <a href="blog1.html"
+              >Buy Herbal Oil Pakistan: Your Expert Guide to Natural Hair
+              Care</a
+            >
+          </li>
+          <li>
+            <a href="blog2.html"
+              >Diet and Hair Health: The Surprising Link to Better Hair</a
+            >
+          </li>
+          <li>
+            <a href="blog3.html"
+              >The 5-Minute Daily Routine to Prevent Split Ends Forever</a
+            >
+          </li>
+        </ul>
+
+        <h3>Categories</h3>
+        <ul>
+          <li><a href="bodycare.html">Body Care</a></li>
+          <li><a href="exclusive_bundle.html">Exclusive Bundle</a></li>
+          <li><a href="hair_serum.html">Hair Serum</a></li>
+          <li>
+            <a href="oil_shampoo.html"
+              >Organic Hair Oil / Organic Hair Shampoo
+            </a>
+          </li>
+          <li><a href="soap.html">Organic Soap </a></li>
+          <li><a href="wellness.html">Wellness</a></li>
+        </ul>
+      </aside>
+    </div>
+    <!-- Search Overlay -->
+    <div id="search-overlay">
+      <div class="search-container">
+        <span id="close-search">&times;</span>
+        <input type="text" id="search-input" placeholder="Search products..." />
+        <div id="search-results"></div>
+      </div>
+    </div>
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+      <span class="close-cart" id="close-cart">&times;</span>
+      <h3>Your Cart</h3>
+      <div id="cart-items"></div>
+      <div class="cart-total" id="cart-total">Total: $0.00</div>
+      <div class="cart-actions" id="cart-actions" style="display: none">
+        <a href="checkout.html" class="checkout">Checkout</a>
+      </div>
+    </div>
+    <hr />
+    <footer class="footcopy">© 2025 Developed by Herbify</footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

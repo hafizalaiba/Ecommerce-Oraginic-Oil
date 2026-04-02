@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Herbify Login & Registration</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      .container {
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .form-side {
+        width: 400px;
+        padding: 40px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.5s ease;
+        opacity: 0;
+        transform: scale(0.9);
+        pointer-events: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+      }
+      .form-side.active {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        pointer-events: auto;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+      }
+      button {
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        color: #fff;
+        width: 100%;
+      }
+      .login button {
+        background: #1976d2;
+      }
+      .login button:hover {
+        background: #125ea3;
+      }
+      .register button {
+        background: #2e7d32;
+      }
+      .register button:hover {
+        background: #276128;
+      }
+
+      .password-box {
+        position: relative;
+      }
+      .password-box input {
+        padding: 10px 40px 10px 10px;
+      }
+      .password-box i {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #555;
+      }
+
+      .google-box {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        margin-bottom: 15px;
+        border-radius: 4px;
+      }
+      .google-box img {
+        width: 18px;
+        height: 18px;
+      }
+      .google-box:hover {
+        background: #f0f0f0;
+      }
+
+      .options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+      }
+      .options label {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 20px;
+        white-space: nowrap;
+      }
+      .options label input[type="checkbox"] {
+        margin: 0;
+        vertical-align: middle;
+      }
+      .options .lost {
+        margin-bottom: 20px;
+        color: green;
+        text-decoration: none;
+      }
+      .create-account {
+        text-align: center;
+        margin-top: 20px;
+        color: black;
+      }
+      .create-account a {
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        color: black;
+      }
+      .create-account a:hover {
+        border-bottom: 1px solid green;
+      }
+     
+    </style>
+  </head>
+  <body>
+     <header class="navbar">
+  <a href="index.html" class="logo">
+    <img src="images/nav_logo.png" alt="Organic Logo">
+  </a>
+
+  <nav class="menu">
+        <div class="dropdown">
+
+    <a href="index.html">HOME</a>
+  </div>
+
+    <div class="dropdown">
+      <a href="#">SHOP <i class="fa fa-chevron-down"></i></a>
+      <div class="dropdown-menu">
+        <a href="bodycare.html">Body Care</a>
+        <a href="exclusive_bundle.html">Exclusive Bundle</a>
+        <a href="hair_serum.html">Hair Serum</a>
+        <a href="oil_shampoo.html">Organic Hair Oil / Organic Hair Shampoo </a>
+        <a href="soap.html">Organic Soap </a>
+        <a href="wellness.html">Wellness</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="index.html#section-heading">BLOG HERBIFY</a>
+    </div>
+    <div class="dropdown">
+    <a href="contactus.html">CONTACT US</a>
+    </div>
+  </nav>
+  <div class="icons">
+            <i class="fas fa-bars" id="menu-toggle" style="color: black"></i>
+
+<i class="fa fa-search" id="search-btn"></i>
+<a href="account.html">
+  <i class="fa fa-user"></i>
+</a>
+        <i class="fa fa-shopping-cart" id="cart-btn"> Cart</i>
+                <div class="cart-count" id="cart-count">0</div>
+
+  </div>
+</header>
+    <div class="container">
+      <div class="form-side login active">
+        <h2>Login</h2>
+        <div class="google-box">
+          <img
+            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+            alt="Google"
+          />
+          <span>Sign in with Google</span>
+        </div>
+
+        <form id="loginForm">
+          <input type="email" placeholder="Email" required />
+          <div class="password-box">
+            <input
+              type="password"
+              placeholder="Password"
+              id="loginPassword"
+              required
+            />
+            <i
+              class="fa fa-eye"
+              onclick="togglePassword('loginPassword', this)"
+            ></i>
+          </div>
+          <div class="options">
+            <label><input type="checkbox" /> Remember me</label>
+            <a href="lost_password.html" class="lost">Lost your password?</a>
+          </div>
+          <button type="submit">Log In</button>
+          <div class="create-account">
+            <a href="#" id="createAccountLink">Create New Account</a>
+          </div>
+        </form>
+      </div>
+      <div id="form-side register" class="form-side register">
+        <h2>Create Account</h2>
+        <form id="registerForm">
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email" required />
+          <div class="password-box">
+            <input
+              type="password"
+              placeholder="Password"
+              id="regPassword"
+              required
+            />
+            <i
+              class="fa fa-eye toggle-pass"
+              onclick="togglePassword('regPassword', this)"
+            ></i>
+          </div>
+          <div class="password-box">
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              id="regConfirm"
+              required
+            />
+            <i
+              class="fa fa-eye toggle-pass"
+              onclick="togglePassword('regConfirm', this)"
+            ></i>
+          </div>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+    <hr />
+    <!-- search overlay -->
+    <div id="search-overlay">
+      <div class="search-container">
+        <span id="close-search">&times;</span>
+        <input type="text" id="search-input" placeholder="Search products..." />
+        <div id="search-results"></div>
+      </div>
+    </div>
+    <!-- cart sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+      <span class="close-cart" id="close-cart">&times;</span>
+      <h3>Your Cart</h3>
+      <div id="cart-items"></div>
+      <div class="cart-total" id="cart-total">Total: $0.00</div>
+      <div class="cart-actions" id="cart-actions" style="display: none">
+        <a href="checkout.html" class="checkout">Checkout</a>
+      </div>
+    </div>
+    <footer class="footcopy">© 2025 Developed by Herbify</footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>

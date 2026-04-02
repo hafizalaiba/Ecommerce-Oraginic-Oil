@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Herbify WellNess</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      body {
+        background: #fdfdfd;
+        color: #333;
+      }
+
+    
+    </style>
+  </head>
+  <body>
+     <header class="navbar">
+      <a href="index.html" class="logo">
+        <img src="images/nav_logo.png" alt="Organic Logo" />
+      </a>
+      <nav class="menu">
+        <div class="dropdown">
+          <a href="index.html">HOME</a>
+        </div>
+        <div class="dropdown">
+          <a href="#">SHOP <i class="fa fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="bodycare.html">Body Care</a>
+            <a href="exclusive_bundle.html">Exclusive Bundle</a>
+            <a href="hair_serum.html">Hair Serum</a>
+            <a href="oil_shampoo.html"
+              >Organic Hair Oil / Organic Hair Shampoo
+            </a>
+            <a href="soap.html">Organic Soap </a>
+            <a href="wellness.html">Wellness</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="index.html#section-heading">BLOG HERBIFY</a>
+        </div>
+        <div class="dropdown">
+          <a href="contactus.html">CONTACT US</a>
+        </div>
+      </nav>
+      <div class="icons">
+        <i class="fas fa-bars" id="menu-toggle" style="color: black"></i>
+
+        <i class="fa fa-search" id="search-btn"></i>
+        <a href="account.html">
+          <i class="fa fa-user"></i>
+        </a>
+        <i class="fa fa-shopping-cart" id="cart-btn"> Cart</i>
+        <div class="cart-count" id="cart-count">0</div>
+      </div>
+    </header>
+
+    <div class="banner">Herbify WellNess Collection</div>
+
+    <!-- Products -->
+    <div class="content-wrapper">
+      <div class="cards-wrapper">
+        <div
+          class="card"
+          data-id="1"
+          data-name="
+Salt Water Vanilla Body Lotion"
+          data-price="5.99"
+          data-img="https://i.pinimg.com/1200x/bb/9b/da/bb9bdadf8c3b1a5a40f522e916b388de.jpg"
+          data-category="WellNess"
+     data-tags="Body Care, Lotion, Vanilla, Moisturizing, Hydrating, Smooth Skin, Natural">
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/1200x/bb/9b/da/bb9bdadf8c3b1a5a40f522e916b388de.jpg"
+              alt="Salt Water Vanilla Body Lotion"
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4>Salt Water Vanilla Body Lotion</h4>
+            <p>$5.99</p>
+            <span>Body Lotion</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+        <div
+          class="card"
+          data-id="2"
+          data-name="
+Soothing Eucalyptus Massage Oil"
+          data-price="5.99"
+          data-img="https://i.pinimg.com/1200x/b7/96/d0/b796d09f3a5ee0356004aaba34341951.jpg"
+          data-category="WellNess"
+     data-tags="Body Care, Massage Oil, Eucalyptus, Relaxing, Soothing, Hydrating, Natural">
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/1200x/b7/96/d0/b796d09f3a5ee0356004aaba34341951.jpg"
+              alt="
+Soothing Eucalyptus Massage Oil"
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4> Soothing Eucalyptus Massage Oil</h4>
+            <p>$5.99</p>
+            <span>Body Oil</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+        <div
+          class="card"
+          data-id="3"
+          data-name="
+ Aloe Vera! Natural moisturizer | Reduces inflammation"
+          data-price="5.99"
+          data-img="https://i.pinimg.com/1200x/53/7f/be/537fbe4eb619e9bb6bdfd28898c255b0.jpg"
+          data-category="WellNess"
+     data-tags="Skincare, Aloe Vera, Moisturizer, Soothing, Hydrating, Anti-inflammatory, Natural">
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/1200x/53/7f/be/537fbe4eb619e9bb6bdfd28898c255b0.jpg"
+              alt="Aloe Vera! Natural moisturizer | Reduces inflammation"
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4>Aloe Vera! Natural moisturizer | Reduces inflammation</h4>
+            <p>$5.99</p>
+            <span>Aleo Vera</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+        <div
+          class="card"
+          data-id="4"
+          data-name="
+Multani Mitti: Natural Skincare Secret for Radiant Skin!"
+          data-price="5.99"
+          data-img="https://i.pinimg.com/736x/4b/82/2c/4b822cc5f9f0f5cb98e6ea1a40c99ec8.jpg"
+          data-category="WellNess"
+     data-tags="Skincare, Multani Mitti, Natural, Face Mask, Radiant Skin, Glowing, Cleansing">
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/736x/4b/82/2c/4b822cc5f9f0f5cb98e6ea1a40c99ec8.jpg"
+              alt="Multani Mitti: Natural Skincare Secret for Radiant Skin!"
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4>
+Multani Mitti: Natural Skincare Secret for Radiant Skin!     </h4>
+            <p>$5.99</p>
+            <span>Face Pack</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+        <div
+          class="card"
+          data-id="5"
+          data-name="
+
+Rose Water for Face | Organic Smoothing Rose Water Spray"
+          data-price="5.99"
+          data-img="https://i.pinimg.com/1200x/52/a3/a1/52a3a12d6be89343dccbb8fa036679d7.jpg"
+          data-category="WellNess"
+     data-tags="Skincare, Rose Water, Organic, Face Mist, Smoothing, Hydrating, Refreshing">
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/1200x/52/a3/a1/52a3a12d6be89343dccbb8fa036679d7.jpg"
+              alt="Rose Water for Face | Organic Smoothing Rose Water Spray"
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4>Rose Water for Face | Organic Smoothing Rose Water Spray</h4>
+            <p>$5.99</p>
+            <span>Rose water For Face</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+        <div
+          class="card"
+          data-id="6"
+          data-name="
+Peppermint Foot Cream"
+          data-price="5.99"
+          data-img="https://i.pinimg.com/736x/30/7e/91/307e913511faf1e54735d3b58e978893.jpg"
+          data-category="WellNess"
+     data-tags="Skincare, Foot Care, Peppermint, Cooling, Refreshing, Moisturizing, Soothing">
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/736x/30/7e/91/307e913511faf1e54735d3b58e978893.jpg"
+              alt="
+Peppermint Foot Cream"
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4>Peppermint Foot Cream</h4>
+            <p>$5.99</p>
+            <span>Foot Cream</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+        <div
+          class="card"
+          data-id="7"
+          data-name="
+Homemade Face Scrubs For Glowing Skin"
+          data-price="5.99"
+          data-img="https://i.pinimg.com/736x/b0/69/43/b06943372a58271fdea2a8aeacedafab.jpg"
+          data-category="WellNess"
+     data-tags="Skincare, Face Scrub, Exfoliating, Glowing Skin, Natural, Homemade, Brightening">
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/736x/b0/69/43/b06943372a58271fdea2a8aeacedafab.jpg"
+              alt="
+Homemade Face Scrubs For Glowing Skin"
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4>Homemade Face Scrubs For Glowing Skin</h4>
+            <p>$5.99</p>
+            <span>Scrub</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+        <div
+          class="card"
+          data-id="8"
+          data-name="
+ROSELYNBOUTIQUE Cryotherapy Ice Roller"
+          data-price="5.99"
+          data-img="https://i.pinimg.com/736x/f5/a4/d7/f5a4d72129aed220b4f635b7f897222f.jpg"
+          data-category="WellNess"
+     data-tags="Skincare, Ice Roller, Cryotherapy, Cooling, Puffiness, Soothing, Facial Care">
+          <div class="card-img-wrapper">
+            <img
+              src="https://i.pinimg.com/736x/f5/a4/d7/f5a4d72129aed220b4f635b7f897222f.jpg"
+              alt="
+ROSELYNBOUTIQUE Cryotherapy Ice Roller"
+            />
+            <div class="preview-icon"><i class="fa fa-eye"></i></div>
+          </div>
+          <div class="cards-content">
+            <h4>ROSELYNBOUTIQUE Cryotherapy Ice Roller</h4>
+            <p>$5.99</p>
+            <span>Skin Care Tool</span>
+            <button class="add-to-cart" id="add-to-basket">Add to Cart</button>
+          </div>
+        </div>
+        
+      </div>
+
+    <!-- Sidebar -->
+       <aside class="sidebar">
+        <h3>Recent Posts</h3>
+        <ul>
+          <li>
+            <a href="blog1.html"
+              >Buy Herbal Oil Pakistan: Your Expert Guide to Natural Hair
+              Care</a
+            >
+          </li>
+          <li>
+            <a href="blog2.html"
+              >Diet and Hair Health: The Surprising Link to Better Hair</a
+            >
+          </li>
+          <li>
+            <a href="blog3.html"
+              >The 5-Minute Daily Routine to Prevent Split Ends Forever</a
+            >
+          </li>
+        </ul>
+
+        <h3>Categories</h3>
+        <ul>
+          <li><a href="bodycare.html">Body Care</a></li>
+          <li><a href="exclusive_bundle.html">Exclusive Bundle</a></li>
+          <li><a href="hair_serum.html">Hair Serum</a></li>
+          <li>
+            <a href="oil_shampoo.html"
+              >Organic Hair Oil / Organic Hair Shampoo
+            </a>
+          </li>
+          <li><a href="soap.html">Organic Soap </a></li>
+          <li><a href="wellness.html">Wellness</a></li>
+        </ul>
+      </aside>
+    </div>
+    <!-- Search Overlay -->
+    <div id="search-overlay">
+      <div class="search-container">
+        <span id="close-search">&times;</span>
+        <input type="text" id="search-input" placeholder="Search products..." />
+        <div id="search-results"></div>
+      </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+      <span class="close-cart" id="close-cart">&times;</span>
+      <h3>Your Cart</h3>
+      <div id="cart-items"></div>
+      <div class="cart-total" id="cart-total">Total: $0.00</div>
+      <div class="cart-actions" id="cart-actions" style="display: none">
+        <a href="checkout.html" class="checkout">Checkout</a>
+      </div>
+    </div>
+    <hr />
+    <footer class="footcopy">© 2025 Developed by Herbify</footer>
+   <script src="js/script.js"></script>
+  </body>
+</html>

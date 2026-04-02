@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Preview</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Poppins, sans-serif;
+        margin: 0;
+        background: #fdfdfd;
+        color: #333;
+      }
+
+      /* Product container */
+      .container {
+        max-width: 1200px;
+        margin: 40px auto;
+        display: flex;
+        gap: 50px;
+        padding: 0 20px;
+        flex-wrap: wrap;
+      }
+      .img-box {
+        flex: 1;
+        min-width: 300px;
+      }
+      /* Breadcrumb  */
+      #breadcrumb {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      #breadcrumb a {
+        text-decoration: none;
+        color: #538b53;
+      }
+
+      #breadcrumb span {
+        color: #333;
+      }
+
+      .img-box img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+      .info-box {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .info-box h3 {
+        color: #538b53;
+      }
+      .info-box .price {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .quantity {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+      }
+      .quantity button {
+        padding: 5px 10px;
+        cursor: pointer;
+        background: #538b53;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+      }
+      .quantity input {
+        width: 50px;
+        text-align: center;
+        font-size: 16px;
+        padding: 5px;
+      }
+      .add-to-basket {
+        padding: 10px 20px;
+        background: #538b53;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .add-to-basket:hover {
+        background: #2c5a2c;
+      }
+      .back-link {
+        text-decoration: none;
+        color: #538b53;
+      }
+
+      /* Cart sidebar */
+      .cart-sidebar {
+        position: fixed;
+        top: 0;
+        right: -400px;
+        width: 400px;
+        height: 100%;
+        background: #fff;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        transition: right 0.3s;
+        padding: 20px;
+        overflow-y: auto;
+        z-index: 1000;
+      }
+      .cart-sidebar.active {
+        right: 0;
+      }
+      .cart-sidebar h3 {
+        margin-bottom: 15px;
+        color: #538b53;
+      }
+      .cart-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+      }
+      .cart-item img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        margin-right: 10px;
+        border-radius: 5px;
+      }
+      .cart-item .item-info {
+        flex: 1;
+      }
+      .cart-item .item-info h4 {
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+      .cart-item .item-info p {
+        font-size: 13px;
+        color: #555;
+      }
+      .cart-item .remove {
+        cursor: pointer;
+        color: red;
+        font-size: 14px;
+      }
+      .cart-total {
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 16px;
+      }
+      .cart-actions {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .cart-actions a {
+        flex: 1;
+        text-align: center;
+        padding: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .view-basket {
+        background: #eee;
+        color: #333;
+      }
+
+      .checkout {
+        background: #538b53;
+        color: #fff;
+      }
+
+      .close-cart {
+        cursor: pointer;
+        color: #000;
+        font-size: 20px;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+      }
+      /* Modal */
+      .modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+      }
+      .modal.active {
+        display: flex;
+      }
+      .modal-box {
+        background: #fff;
+        padding: 25px;
+        width: 100%;
+        max-width: 420px;
+        border-radius: 10px;
+        position: relative;
+      }
+      .modal-box h3 {
+        color: #538b53;
+        margin-bottom: 8px;
+      }
+      .modal-box p {
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+      .modal-box label {
+        font-size: 14px;
+        display: block;
+        margin-bottom: 5px;
+      }
+      .modal-box input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+      .modal-check {
+        display: flex;
+        gap: 10px;
+        font-size: 13px;
+        margin-bottom: 20px;
+      }
+      .modal-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+      }
+      .cancel-btn {
+        background: #ccc;
+        border: none;
+        padding: 8px 14px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .confirm-btn {
+        background: #538b53;
+        color: #fff;
+        border: none;
+        padding: 8px 14px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .modal-close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      /* product-meta */
+      .product-meta {
+        margin-top: 20px;
+        font-size: 13px;
+        color: #555;
+      }
+
+      .product-meta hr {
+        border: none;
+        border-top: 1px solid #ccc;
+        margin: 10px 0;
+      }
+
+      .product-meta p {
+        margin: 10px 0;
+
+      }
+
+      .social-icons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 8px;
+        font-size: 14px;
+        color: #333;
+      }
+
+      .social-icons span {
+        font-weight: bold;
+      }
+
+      .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 25px;
+        height: 25px;
+        background: #f0f0f0;
+        color: #333;
+        border-radius: 50%;
+        text-decoration: none;
+        font-size: 14px;
+        transition: all 0.3s;
+      }
+
+      .social-icons a:hover {
+        background: #538b53;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="index.html" class="logo">
+        <img src="images/nav_logo.png" alt="Organic Logo" />
+      </a>
+      <nav class="menu">
+        <div class="dropdown">
+          <a href="index.html">HOME</a>
+        </div>
+        <div class="dropdown">
+          <a href="#">SHOP <i class="fa fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="bodycare.html">Body Care</a>
+            <a href="exclusive_bundle.html">Exclusive Bundle</a>
+            <a href="hair_serum.html">Hair Serum</a>
+            <a href="oil_shampoo.html"
+              >Organic Hair Oil / Organic Hair Shampoo
+            </a>
+            <a href="soap.html">Organic Soap </a>
+            <a href="wellness.html">Wellness</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="index.html#section-heading">BLOG HERBIFY</a>
+        </div>
+        <div class="dropdown">
+          <a href="contactus.html">CONTACT US</a>
+        </div>
+      </nav>
+      <div class="icons">
+        <i class="fas fa-bars" id="menu-toggle" style="color: black"></i>
+
+        <i class="fa fa-search" id="search-btn"></i>
+        <a href="account.html">
+          <i class="fa fa-user"></i>
+        </a>
+        <i class="fa fa-shopping-cart" id="cart-btn"> Cart</i>
+        <div class="cart-count" id="cart-count">0</div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="img-box">
+        <div class="breadcrumb" id="breadcrumb"></div>
+
+        <img
+          id="product-img"
+          src="https://i.pinimg.com/736x/15/e5/1a/15e51a2587b25f909e4eb1c76988ec7d.jpg"
+          alt="Beautique Goals Skincare | Jamaican Mango Flower Body Butter | Color: Pink"
+        />
+      </div>
+      <div class="info-box">
+        <h3 id="product-name" data-category="Body Care">
+          Beautique Goals Skincare | Jamaican Mango Flower Body Butter | Color:
+          Pink
+        </h3>
+
+        <p class="price" id="product-price">$5.99</p>
+
+        <div class="quantity">
+          <button id="minus">-</button>
+          <input type="text" id="qty" value="1" readonly />
+          <button id="plus">+</button>
+        </div>
+
+        <button class="add-to-basket" id="add-to-basket">Add to Basket</button>
+        <div class="product-meta">
+          <hr />
+          <p><strong>Category:</strong> <span id="product-category"></span></p>
+          <p class="tags">
+            <strong>Tags:</strong> anti-aging, antioxidant, brightening, even
+            skin tone, face serum, hydrating, radiant skin, skincare, vitamin C,
+            youthful skin
+          </p>
+
+          <!-- Social Share -->
+          <div class="social-icons">
+            <span>Share:</span>
+            <a href="https://www.facebook.com" title="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://twitter.com" title="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="https://api.whatsapp.com" title="WhatsApp"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+            <a href="https://www.youtube.com" title="YouTube"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="https://www.instagram.com" title="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add To Cart Modal -->
+    <div class="modal" id="cart-modal">
+      <div class="modal-box">
+        <span class="modal-close" id="modal-close">&times;</span>
+
+        <h3>Please enter your Details</h3>
+        <p>To add this item to your cart, please enter the details below</p>
+
+        <label>Email Address</label>
+        <input type="email" id="user-email" placeholder="Enter your email" />
+
+        <div class="modal-check">
+          <input type="checkbox" id="agree" />
+          <label for="agree">
+            I agree that my submitted data is being collected for future
+            follow-ups
+          </label>
+        </div>
+
+        <div class="modal-actions">
+          <button class="cancel-btn" id="cancel-modal">Cancel</button>
+          <button class="confirm-btn" id="confirm-add">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+      <span class="close-cart" id="close-cart">&times;</span>
+      <h3>Your Cart</h3>
+      <div id="cart-items"></div>
+      <div class="cart-total" id="cart-total">Total: $0.00</div>
+      <div class="cart-actions" id="cart-actions" style="display: none">
+        <a href="checkout.html" class="checkout">Checkout</a>
+      </div>
+    </div>
+    <footer>© 2025 Developed by Herbify</footer>
+
+    <script>
+      let qty = 1;
+      let product;
+      function getQueryParams() {
+        const params = {};
+        const queryString = window.location.search.slice(1);
+        queryString.split("&").forEach((pair) => {
+          const [key, value] = pair.split("=");
+          params[key] = decodeURIComponent(value || "");
+        });
+        return params;
+      }
+
+      window.addEventListener("DOMContentLoaded", () => {
+        const params = getQueryParams();
+        product = {
+          id: Date.now(),
+          name: params.name || "Product Name",
+          price: parseFloat((params.price || "0").replace(/[^0-9.]/g, "")),
+          img: params.img || "default.jpg",
+          category: params.category || "Body Care",
+          tags: params.tags || "None",
+          qty: 1,
+        };
+
+        // Load registered user email automatically
+        const user = JSON.parse(localStorage.getItem("registeredUser"));
+        if (user && user.email) {
+          document.getElementById("user-email").value = user.email;
+        }
+
+        // localStorage.removeItem("cart");
+
+        // Set product info dynamically
+        document.getElementById("product-name").textContent =
+          params.name || "Product Name";
+        document.getElementById("product-price").textContent = `$${
+          params.price || "0.00"
+        }`;
+        document.getElementById("product-img").src =
+          params.img || "default.jpg";
+        document.getElementById("product-category").textContent =
+          params.category || "Uncategorized";
+
+        // Update breadcrumbs dynamically
+        const breadcrumb = document.getElementById("breadcrumb");
+        const category = params.category || "Body Care";
+
+        breadcrumb.innerHTML = `
+    <a href="index.html">Home</a> &gt; 
+    <a href="${category
+      .toLowerCase()
+      .replace(/\s+/g, "")}.html">${category}</a> &gt; 
+    <span>${params.name}</span>
+  `;
+
+        const tagsContainer = document.querySelector(".product-meta .tags");
+        if (tagsContainer) {
+          tagsContainer.innerHTML = `<strong>Tags:</strong> ${
+            params.tags || "None"
+          }`;
+        }
+
+        let cart = [];
+        const cartCount = document.getElementById("cart-count");
+        const plus = document.getElementById("plus");
+        const minus = document.getElementById("minus");
+        const qtyInput = document.getElementById("qty");
+        const addBtn = document.getElementById("add-to-basket");
+
+        const cartBtn = document.getElementById("cart-btn");
+        const cartSidebar = document.getElementById("cart-sidebar");
+        const cartItems = document.getElementById("cart-items");
+        const cartTotal = document.getElementById("cart-total");
+        const closeCart = document.getElementById("close-cart");
+
+        // Quantity controls
+        plus.addEventListener("click", () => {
+          qty++;
+          qtyInput.value = qty;
+        });
+        minus.addEventListener("click", () => {
+          if (qty > 1) qty--;
+          qtyInput.value = qty;
+        });
+
+        // Add to basket
+        const modal = document.getElementById("cart-modal");
+        const modalClose = document.getElementById("modal-close");
+        const cancelModal = document.getElementById("cancel-modal");
+        const confirmAdd = document.getElementById("confirm-add");
+
+        let pendingQty = 1;
+
+        // Open modal
+        addBtn.addEventListener("click", () => {
+          pendingQty = qty;
+          modal.classList.add("active");
+        });
+
+        // Close modal
+        modalClose.onclick = cancelModal.onclick = () => {
+          modal.classList.remove("active");
+          document.getElementById("user-email").value = "";
+          document.getElementById("agree").checked = false;
+        };
+
+        confirmAdd.addEventListener("click", () => {
+          const email = document.getElementById("user-email").value;
+          const agree = document.getElementById("agree").checked;
+
+          if (!email) {
+            alert("Please enter your email");
+            return;
+          }
+          if (!agree) {
+            alert("Please accept the terms");
+            return;
+          }
+
+          const uniqueId = Date.now() + Math.random().toString(36).substr(2, 5);
+
+          //  cart from localStorage
+          cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+          cart.push({
+            id: uniqueId,
+            name: product.name,
+            price: Number(product.price) || 0,
+            img: product.img,
+            qty: Number(pendingQty) || 1,
+            email: email,
+          });
+
+          localStorage.setItem("cart", JSON.stringify(cart));
+
+          updateCartUI();
+          modal.classList.remove("active");
+        });
+
+        // Open cart sidebar
+        cartBtn.addEventListener("click", () => {
+          cartSidebar.classList.toggle("active");
+          const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+          renderCartItems(storedCart);
+        });
+        closeCart.addEventListener("click", () => {
+          cartSidebar.classList.remove("active");
+        });
+
+        function updateCartUI() {
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+          const totalQty = cart.reduce(
+            (acc, item) => acc + Number(item.qty || 0),
+            0
+          );
+          cartCount.textContent = totalQty;
+
+          const cartActions = document.getElementById("cart-actions");
+          if (cart.length > 0) {
+            cartActions.style.display = "flex";
+          } else {
+            cartActions.style.display = "none";
+          }
+
+          renderCartItems(cart);
+        }
+
+        // Render cart sidebar
+        function renderCartItems(cart) {
+          cartItems.innerHTML = "";
+          let total = 0;
+          cart.forEach((item) => {
+            total += Number(item.price || 0) * Number(item.qty || 0);
+            const div = document.createElement("div");
+            div.className = "cart-item";
+            div.innerHTML = `
+      <img src="${item.img}" alt="${item.name}">
+      <div class="item-info">
+        <h4>${item.name}</h4>
+        <p>$${item.price} x ${item.qty}</p>
+      </div>
+      <span class="remove" data-id="${item.id}">&times;</span>
+    `;
+            cartItems.appendChild(div);
+          });
+          cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+
+          // Remove item
+          document.querySelectorAll(".remove").forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              const id = btn.dataset.id;
+              let cart = JSON.parse(localStorage.getItem("cart")) || [];
+              cart = cart.filter((item) => item.id !== id);
+              localStorage.setItem("cart", JSON.stringify(cart));
+              updateCartUI();
+            });
+          });
+        }
+        updateCartUI();
+      });
+    </script>
+  </body>
+</html>

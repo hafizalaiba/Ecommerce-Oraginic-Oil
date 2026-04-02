@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Herbify Checkout</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Poppins, sans-serif;
+        background: linear-gradient(135deg, #f2f6f3, #eaf3ec);
+      }
+      .checkout-container {
+        max-width: 1100px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 35px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .returning {
+        background: #f4faf6;
+        padding: 15px 20px;
+        margin-bottom: 25px;
+        font-size: 14px;
+        border-left: 4px solid green;
+        border-radius: 6px;
+      }
+      .returning a {
+        color: green;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .checkout-grid {
+        display: flex;
+        gap: 30px;
+      }
+
+      /* cards */
+      .billing,
+      .order-summary {
+        width: 50%;
+        border: 1px solid #e5e5e5;
+        padding: 25px;
+        border-radius: 10px;
+        background: #fff;
+      }
+
+      /* headings */
+      .billing h3,
+      .order-summary h3 {
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px dashed #ddd;
+        color: #2f6b3f;
+      }
+
+      /* inputs */
+      .input-row {
+        display: flex;
+        gap: 15px;
+      }
+      .input-group {
+        margin-bottom: 16px;
+      }
+      .input-group label {
+        display: block;
+        font-size: 13px;
+        margin-bottom: 6px;
+        font-weight: 500;
+      }
+      .optional {
+        font-size: 11px;
+        color: #888;
+      }
+      input {
+        width: 100%;
+        padding: 11px 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        transition: 0.3s;
+      }
+      input:focus {
+        outline: none;
+        border-color: green;
+        box-shadow: 0 0 0 2px rgba(0, 128, 0, 0.15);
+      }
+      input.error {
+        border-color: red;
+      }
+
+      /* order box */
+      .order-box {
+        border: 1px solid #e2e2e2;
+        padding: 18px;
+        border-radius: 8px;
+        background: #fafafa;
+      }
+      .order-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .order-header {
+        font-weight: 600;
+        border-bottom: 3px solid #ddd;
+        padding-bottom: 15px;
+      }
+      .total {
+        font-weight: 700;
+        font-size: 15px;
+      }
+
+      /* button */
+      .checkout-btn {
+        width: 100%;
+        margin-top: 25px;
+        padding: 14px;
+        border: none;
+        background: #cfe5d4;
+        color: #fff;
+        font-size: 17px;
+        border-radius: 8px;
+        cursor: not-allowed;
+        transition: 0.3s;
+      }
+      .checkout-btn.active {
+        background: linear-gradient(135deg, #2e7d32, #1b5e20);
+        cursor: pointer;
+        box-shadow: 0 6px 15px rgba(0, 128, 0, 0.3);
+      }
+      .checkout-btn.active:hover {
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="navbar">
+      <a href="index.html" class="logo">
+        <img src="images/nav_logo.png" alt="Organic Logo" />
+      </a>
+      <nav class="menu">
+        <div class="dropdown">
+          <a href="index.html">HOME</a>
+        </div>
+        <div class="dropdown">
+          <a href="#">SHOP <i class="fa fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="bodycare.html">Body Care</a>
+            <a href="exclusive_bundle.html">Exclusive Bundle</a>
+            <a href="hair_serum.html">Hair Serum</a>
+            <a href="oil_shampoo.html"
+              >Organic Hair Oil / Organic Hair Shampoo
+            </a>
+            <a href="soap.html">Organic Soap </a>
+            <a href="wellness.html">Wellness</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="index.html#section-heading">BLOG HERBIFY</a>
+        </div>
+        <div class="dropdown">
+          <a href="contactus.html">CONTACT US</a>
+        </div>
+      </nav>
+      <div class="icons">
+        <i class="fas fa-bars" id="menu-toggle" style="color: black"></i>
+
+        <i class="fa fa-search" id="search-btn"></i>
+        <a href="account.html">
+          <i class="fa fa-user"></i>
+        </a>
+        <i class="fa fa-shopping-cart" id="cart-btn"> Cart</i>
+        <div class="cart-count" id="cart-count">0</div>
+      </div>
+    </header>
+    <div class="checkout-container">
+      <div class="returning">
+        Returning customer?
+        <a href="account.html">Click here to login</a>
+      </div>
+      <div class="checkout-grid">
+        <div class="billing">
+          <h3>Billing Details</h3>
+
+          <div class="input-row">
+            <div class="input-group">
+              <label>First Name</label>
+              <input type="text" class="req" />
+            </div>
+            <div class="input-group">
+              <label>Last Name</label>
+              <input type="text" class="req" />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>Company Name <span class="optional">(optional)</span></label>
+            <input type="text" />
+          </div>
+
+          <div class="input-group">
+            <label>Country / Region</label>
+            <input type="text" class="req" />
+          </div>
+
+          <div class="input-group">
+            <label>Street Address</label>
+            <input type="text" class="req" />
+          </div>
+
+          <div class="input-group">
+            <label>Town / City</label>
+            <input type="text" class="req" />
+          </div>
+
+          <div class="input-group">
+            <label>Phone</label>
+            <input type="tel" class="req" />
+          </div>
+
+          <div class="input-group">
+            <label>Email</label>
+            <input type="email" id="email" class="req" />
+          </div>
+        </div>
+
+        <div class="order-summary">
+          <h3 style="text-align: center">Your Order</h3>
+
+          <div class="order-box">
+            <div class="order-row order-header">
+              <span>Product</span>
+              <span>Subtotal</span>
+            </div>
+            <div id="cartItems" class="order-header"></div>
+            <div class="order-row order-header">
+              <span>Subtotal</span>
+              <span id="subTotal">$0</span>
+            </div>
+            <div class="order-row order-header">
+              <span>Shipping</span>
+              <span>$5</span>
+            </div>
+            <div class="order-row total order-header">
+              <span>Total</span>
+              <span id="grandTotal">$0</span>
+            </div>
+          </div>
+          <button class="checkout-btn" id="checkoutBtn" disabled>
+            Proceed to Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Search Overlay -->
+    <div id="search-overlay">
+      <div class="search-container">
+        <span id="close-search">&times;</span>
+        <input type="text" id="search-input" placeholder="Search products..." />
+        <div id="search-results"></div>
+      </div>
+    </div>
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+      <span class="close-cart" id="close-cart">&times;</span>
+      <h3>Your Cart</h3>
+      <div id="cart-items"></div>
+      <div class="cart-total" id="cart-total">Total: $0.00</div>
+      <div class="cart-actions" id="cart-actions" style="display: none">
+        <a href="checkout.html" class="checkout">Checkout</a>
+      </div>
+    </div>
+
+    <hr />
+    <footer class="footcopy">© 2025 Developed by Herbify</footer>
+
+    <script src="js/script.js"></script>
+    <script>
+      // Auto email from login
+      const user = JSON.parse(localStorage.getItem("registeredUser"));
+      if (user && user.email) {
+        document.getElementById("email").value = user.email;
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartItemsBox = document.getElementById("cartItems");
+        const subTotalEl = document.getElementById("subTotal");
+        const grandTotalEl = document.getElementById("grandTotal");
+
+        let subTotal = 0;
+
+        if (cart.length === 0) {
+          cartItemsBox.innerHTML = "<p>Your cart is empty</p>";
+          return;
+        }
+
+        cart.forEach((item) => {
+          const itemTotal = item.price * item.qty;
+          subTotal += itemTotal;
+
+          cartItemsBox.innerHTML += `
+      <div class="order-row">
+        <span>${item.name} × ${item.qty}</span>
+        <span>$${itemTotal.toFixed(2)}</span>
+      </div>
+    `;
+        });
+
+        subTotalEl.innerText = "$" + subTotal.toFixed(2);
+
+        const shipping = 5; // fixed delivery
+        grandTotalEl.innerText = "$" + (subTotal + shipping).toFixed(2);
+      });
+      const requiredInputs = document.querySelectorAll(".req");
+      const checkoutButton = document.getElementById("checkoutBtn");
+
+      function checkForm() {
+        let filled = true;
+
+        requiredInputs.forEach((input) => {
+          if (input.value.trim() === "") {
+            input.style.border = "1px solid red";
+            filled = false;
+          } else {
+            input.style.border = "1px solid #ccc";
+          }
+        });
+
+        if (filled) {
+          checkoutButton.disabled = false;
+          checkoutButton.classList.add("active");
+        } else {
+          checkoutButton.disabled = true;
+          checkoutButton.classList.remove("active");
+        }
+      }
+
+      requiredInputs.forEach((input) => {
+        input.addEventListener("input", checkForm);
+      });
+      checkForm();
+      checkoutButton.addEventListener("click", () => {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const billingInfo = {
+          firstName: document.querySelector("input[type=text].req").value,
+          lastName: document.querySelectorAll("input[type=text].req")[1].value,
+          company: document.querySelector("input[type=text]:not(.req)").value,
+          country: document.querySelectorAll("input[type=text].req")[2].value,
+          address: document.querySelectorAll("input[type=text].req")[3].value,
+          city: document.querySelectorAll("input[type=text].req")[4].value,
+          phone: document.querySelector("input[type=tel].req").value,
+          email: document.getElementById("email").value,
+        };
+
+        const lastOrder = {
+          cart: cart,
+          billing: billingInfo,
+        };
+
+        // Save full order
+        localStorage.setItem("lastOrder", JSON.stringify(lastOrder));
+
+        // Clear cart
+        localStorage.removeItem("cart");
+
+        // Redirect
+        window.location.href = "thankyou.html";
+      });
+    </script>
+  </body>
+</html>
